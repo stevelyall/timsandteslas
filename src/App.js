@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import { useEffect, useState } from 'react';
 import './App.css';
-import TTMap from './components/TTMap';
+import TTMapContainer from './containers/TTMapContainer';
 
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
     <div className="App">
       {header}
       {isLoading && (loadingMsg)} 
-      {userLocation && (<TTMap mapLocation={userLocation}/>)}
+      {userLocation && (<TTMapContainer mapLocation={userLocation}/>)}
     </div>
   );
 }
