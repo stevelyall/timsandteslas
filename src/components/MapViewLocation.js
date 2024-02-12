@@ -7,13 +7,13 @@ export default function MapLocation ({boundsChangedHandler}) {
     const map = useMap();
   
     useEffect(() => {
-      console.log(map)
+      // console.log(map)
       if (!map) return;
   
       map.on('moveend zoomend', () => {
         const bounds = map.getBounds();
         boundsChangedHandler(bounds, map.getCenter());
       });
-    }, [map, boundsChangedHandler])
+    }, [boundsChangedHandler, map])
 
   }
