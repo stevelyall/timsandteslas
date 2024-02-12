@@ -17,7 +17,14 @@ const timsSiteIcon = new L.icon({
 
 const TimsSiteMarker = ({ site }) => {
   return (
-    <Marker position={[site.lat, site.long]} key={site.id} icon={timsSiteIcon} riseOnHover>
+    <Marker 
+      position={[site.lat, site.long]}
+      key={site.id}
+      icon={timsSiteIcon}
+      riseOnHover
+      title={site.name}
+      alt={site.name}
+      >
       <Popup key={site.id}>
         <h3>{site.name}</h3>
         <p>
@@ -48,6 +55,7 @@ const TeslaSiteMarker = ({ site }) => {
       icon={teslaSiteIcon}
       riseOnHover
       title={site.name}
+      alt={site.name}
     >
       <Popup key={site.id}>
         <h3>{site.name}</h3>
