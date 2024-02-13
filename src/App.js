@@ -2,7 +2,10 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import TTMapContainer from './containers/TTMapContainer';
-import API from './api/API';
+import SiteDataService from './api/SiteDataService.ts';
+import { MockDataSource } from './api/mock-data/MockDataSource.ts';
+
+const service = new SiteDataService(new MockDataSource());
 
 function App() {
 
@@ -20,17 +23,18 @@ function App() {
     getUserLocation();
     
     // TODO handle API unhappy paths
-    API.getTeslaSites().then((sites) => {
+    service.getTeslaSites().then((sites) => {
       setTeslaSites(sites);
       console.log(sites);
     });
 
-    API.getTimsSites().then((sites) => {
+    service.getTimsSites().then((sites) => {
       setTimsSites(sites);
       console.log(sites);
     });
   }, []);
 
+  // TODO this runs too many times
   // TODO is this needed?
   const mapBoundsChangedHandler = (bounds, center) => {
     console.log("bounds", bounds);

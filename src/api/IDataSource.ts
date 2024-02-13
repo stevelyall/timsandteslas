@@ -1,0 +1,4 @@
+interface IDataSource {
+    getTeslaSites(),
+    getTimsSites()
+}
