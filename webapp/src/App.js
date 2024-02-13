@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import { useEffect, useState } from 'react';
 import './App.css';
-import TTMapContainer from './containers/TTMapContainer';
+import TTMapContainer from './containers/TTMapContainer.js';
 import SiteDataService from './api/SiteDataService.ts';
 import { MockDataSource } from './api/mock-data/MockDataSource.ts';
 
