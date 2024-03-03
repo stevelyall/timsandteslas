@@ -13,3 +13,7 @@ Test `npm test`
 Python 3.11.1 
 Run migrations `python manage.py migrate`
 Start server `python manage.py runserver`
+
+Required Environment Variables (create `.env` in `backend` folder)
+`DJANGO_SECRET_KEY`
+`DJANGO_DEBUG`
